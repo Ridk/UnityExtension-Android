@@ -138,7 +138,7 @@ public static class AndroidCall
         AndroidJavaObject intent = new AndroidJavaObject("android.content.Intent", Intent.GetStatic<string>("ACTION_PICK"),media.GetStatic<AndroidJavaObject>("EXTERNAL_CONTENT_URI"));
         AndroidCall.unityActivity.Call("startActivityForResult", intent, 1);
 
-        MeRuRuActivity listener = new MeRuRuActivity();
+        RidkActivity listener = new RidkActivity();
         listener.onActivityResultDelegate = (requestCode,resultCode,Intentdata)=>
         {
             if (requestCode == 1 && resultCode == new AndroidJavaClass("android.app.Activity").GetStatic<int>("RESULT_OK") && Intentdata != null)
