@@ -64,7 +64,7 @@ public class BLEDveice
     {
         var mBluetoothLeScanner = bluetoothAdapter.Call<AndroidJavaObject>("getBluetoothLeScanner");
         ScanCallback scanCallback = new ScanCallback();
-        AndroidJavaObject wfzScanCallback = new AndroidJavaObject("com.wfz.bletounity.WFZScanCallback");
+        AndroidJavaObject wfzScanCallback = new AndroidJavaObject("com.ridk.unityextension.RidkScanCallback");
         scanCallback.onScanResultDelegate = (t, r) =>
         {
             if (r == null)
@@ -97,7 +97,7 @@ public class BLEDveice
     /// <param name="device">Device.</param>
     void ConnectGatt(AndroidJavaObject device)
     {
-        AndroidJavaObject wfzBluetoothGattCallback = new AndroidJavaObject("com.wfz.bletounity.WFZBluetoothGattCallback");
+        AndroidJavaObject wfzBluetoothGattCallback = new AndroidJavaObject("com.ridk.unityextension.RidkBluetoothGattCallback");
         BluetoothGattCallback bluetoothGattCallback = new BluetoothGattCallback();
         bluetoothGattCallback.onCharacteristicChangedDelegate = (g, c) =>
         {

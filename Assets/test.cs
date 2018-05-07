@@ -10,9 +10,9 @@ public class test : MonoBehaviour ,IPointerClickHandler{
 
     public void OnPointerClick(PointerEventData eventData)
     {
-
+    #if UNITY_ANDROID
         AndroidCall.GetImage("BLEConnect","SetHead",MediaStoreType.Video);
-
+    #endif
       // SetImage("/storage/emulated/0/MeRuRuLab.jpg");
 
     }
@@ -25,7 +25,5 @@ public class test : MonoBehaviour ,IPointerClickHandler{
     void Update () {
 
     }
-
-
 
 }
